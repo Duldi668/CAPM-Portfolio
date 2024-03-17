@@ -4,10 +4,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Geben Sie die risikofreie Rendite ein:");
+        System.out.println("Geben Sie die risikofreie Rendite (1% = 0,01) ein:");
         double riskFreeRate = scanner.nextDouble();
 
-        System.out.println("Geben Sie die erwartete Marktrendite ein:");
+        System.out.println("Geben Sie die erwartete Marktrendite (1% = 0,01) ein:");
         double expectedMarketReturn = scanner.nextDouble();
 
         System.out.println("Geben Sie die Varianz der Marktrendite ein:");
@@ -36,14 +36,12 @@ public class Main {
             portfolio.addStock(stock);
         }
 
-        // Übersicht über jede Aktie
         for (Stock stock : portfolio.getStocks()) {
             double stockExpectedReturn = capm.calculateExpectedReturn(stock.getCovarianceWithMarket());
             double stockBeta = capm.calculateBeta(stock.getCovarianceWithMarket());
             System.out.println(stock.getName() + ": \nErwartete Rendite: " + String.format("%.2f", stockExpectedReturn * 100) + "%, Beta: " + String.format("%.2f", stockBeta));
         }
 
-        // Gesamtportfolio-Übersicht
         double portfolioReturn = portfolio.calculatePortfolioReturn();
         double portfolioBeta = portfolio.calculatePortfolioBeta();
         System.out.println("Gesamtportfolio: \nErwartete Rendite: " + String.format("%.2f", portfolioReturn * 100) + "%, Beta: " + String.format("%.2f", portfolioBeta));

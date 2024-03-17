@@ -1,4 +1,4 @@
-import java.util.ArrayList; //Seite 466 führt arraylist ein und Seite 1000
+import java.util.ArrayList;
 
 public class Portfolio {
     private ArrayList<Stock> stocks;
@@ -13,7 +13,6 @@ public class Portfolio {
         stocks.add(stock);
     }
 
-    // Berechnet die Portfoliorendite basierend auf dem CAPM
     public double calculatePortfolioReturn() {
         double totalValue = 0;
         double weightedReturnSum = 0;
@@ -26,7 +25,6 @@ public class Portfolio {
         return totalValue > 0 ? weightedReturnSum / totalValue : 0;
     }
 
-    // Berechnet das Beta des Gesamtportfolios
     public double calculatePortfolioBeta() {
         double totalValue = 0;
         double weightedBetaSum = 0;
@@ -39,7 +37,6 @@ public class Portfolio {
         return totalValue > 0 ? weightedBetaSum / totalValue : 0;
     }
 
-    // Getter für die Aktienliste, falls benötigt
     public ArrayList<Stock> getStocks() {
         return stocks;
     }

@@ -1,6 +1,6 @@
 public class Stock {
     private String name;
-    private int quantity; //Get only full shares
+    private int quantity;
     private double marketPrice; 
     private double covarianceWithMarket;
 
@@ -11,7 +11,6 @@ public class Stock {
         this.covarianceWithMarket = covarianceWithMarket;
     }
 
-    // Getter
     public String getName() {
         return name;
     }
@@ -28,5 +27,3 @@ public class Stock {
         return covarianceWithMarket;
     }
 }
-
-//Ab Seite 411 in Java ist auch eine Insel wird Prinzp von Sichtbarkeit und Gettern etc. erklärt
